@@ -5,12 +5,13 @@
   "scripts": {
     "start": "npm run watch & npm run server",
     "build": "riot --config riot.config.js tag/* dist/",
-    "watch": "riot --config riot.config.js -w tag/* dist/"
-
+    "watch": "riot --config riot.config.js -w tag/* dist/",
+    "server": "browser-sync start --files 'dist/*, index.html' --server"
   },
   "author": "Naoya Otsuka",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^2.18.12",
     "buble": "^0.15.2",
     "postcss": "^6.0.2",
     "postcss-cssnext": "^2.11.0",
