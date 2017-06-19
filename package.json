@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "npm run watch & npm run server",
-    "build": "riot --config riot.config.js tag/* dist/",
-    "watch": "riot --config riot.config.js -w tag/* dist/",
+    "build": "riot --config riot.config.js tag/ dist/",
+    "watch": "riot --config riot.config.js -w tag/ dist/",
     "server": "browser-sync start --files 'dist/*, index.html' --server"
   },
   "author": "Naoya Otsuka",
