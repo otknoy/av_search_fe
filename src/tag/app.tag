@@ -22,10 +22,11 @@
    const url = `http://192.168.1.50:8080/search?keyword=${keyword}`;
    fetch(url)
      .then(response => {
-       console.log(response);
        return response.json()
      })
      .then(response => {
+       console.log(response.items);
+
        this.items = response.items;
        this.update();
      });
