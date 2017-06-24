@@ -1,5 +1,18 @@
 import riot from 'riot';
-import './app.tag';
-import './item.tag';
+import route from 'riot-route';
 
-riot.mount('app');
+import './tag/app.tag';
+import './tag/search-result.tag';
+import './tag/item.tag';
+import './tag/dmm-credit.tag';
+
+route('/..', () => {
+  const q = route.query();
+  const keyword = q.keyword || '湊莉久';
+
+  console.log(`access /, keyword=${keyword}`);
+
+  riot.mount('app', {keyword: keyword});
+});
+
+route.start(true);

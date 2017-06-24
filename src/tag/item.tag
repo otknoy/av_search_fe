@@ -1,17 +1,16 @@
 <item>
   <p><a href="{ url }">{ title }</a></p>
   <img src="{ imageUrl }"></img>
+  <div>
+    <p each="{ g in genre }"><a href="/?keyword={ g }">{ g }</a></p>
+  </div>
 
   <script>
-   console.log(opts);
-
-   this.title = opts.data.title;
-   this.url = opts.data.url;
-   this.imageUrl = opts.data.imageUrl;
+   console.log(opts.data.genre);
   </script>
   <style>
     :scope {
-      display: block; color: #f04
+      display: block;
     }
 
    img {
