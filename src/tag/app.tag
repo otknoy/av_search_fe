@@ -10,6 +10,12 @@
 
   <search-result items={ items }></search-result>
 
+  <div>
+    <p each="{ k in keywords }">
+      <a href="/?keyword={ k }">{ k }</a>
+    </p>
+  </div>
+
   <footer>
     <dmm-credit></dmm-credit>
   </footer>
@@ -28,7 +34,22 @@
        console.log(response.items);
 
        this.items = response.items;
+       this.keywords = keywords(response)
        this.update();
      });
+
+   function keywords(response) {
+     let keywords = [];
+     response.items.forEach((item) => {
+       item.genre.forEach((genre) => {
+	 keywords.push(genre);
+       });
+     });
+
+     // uniq
+     keywords = keywords.filter((e, i, self) => self.indexOf(e) === i);
+
+     return keywords;
+   }
   </script>
 </app>
