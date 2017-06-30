@@ -7,12 +7,14 @@ import './tag/item.tag';
 import './tag/dmm-credit.tag';
 
 route('/..', () => {
-  const q = route.query();
-  const keyword = q.keyword || '湊莉久';
+    const q = route.query();
 
-  console.log(`access /, keyword=${keyword}`);
+    const keyword = (q.keyword !== undefined)
+	  ? decodeURIComponent(q.keyword) : '湊莉久';
 
-  riot.mount('app', {keyword: keyword});
+    console.log(`access /, keyword=${keyword}`);
+
+    riot.mount('app', {keyword: keyword});
 });
 
 route.start(true);
