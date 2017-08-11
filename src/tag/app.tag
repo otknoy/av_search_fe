@@ -31,16 +31,16 @@
        return response.json()
      })
      .then(response => {
-       console.log(response.items);
+       console.log(response.result.items);
 
-       this.items = response.items;
+       this.items = response.result.items;
        this.keywords = keywords(response)
        this.update();
      });
 
    function keywords(response) {
      let keywords = [];
-     response.items.forEach((item) => {
+     response.result.items.forEach((item) => {
        item.genre.forEach((genre) => {
 	 keywords.push(genre);
        });
