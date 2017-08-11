@@ -25,7 +25,7 @@
    this.keyword = keyword;
 
    // search
-   const url = `http://192.168.1.50:8080/search?keyword=${keyword}`;
+   const url = `http://192.168.1.50:8080/search?keyword=${keyword}&hits=20&sort=date`;
    fetch(url)
      .then(response => {
        return response.json()
