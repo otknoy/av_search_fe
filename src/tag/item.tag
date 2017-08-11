@@ -1,17 +1,17 @@
 <item>
   <p><a href="{ url }">{ title }</a></p>
   <img src="{ imageUrl }"></img>
-  <div>
-    <p each="{ g in genre }"><a href="/?keyword={ g }">{ g }</a></p>
-  </div>
+  <!-- <div>
+       <p each="{ g in genre }"><a href="/?keyword={ g }">{ g }</a></p>
+       </div> -->
 
   <style>
-    :scope {
-      display: block;
+   :scope {
+      background-color: #ff0000;
     }
 
    img {
-     width: 100%;
+     max-width: 100%;
      height: auto;
    }
   </style>
